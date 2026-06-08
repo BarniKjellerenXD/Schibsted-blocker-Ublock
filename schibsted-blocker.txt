@@ -1,0 +1,33 @@
+! Title: Schibsted Blocker
+! Description: Blokkerer Schibsteds "pay-to-reject" CMP-popup på VG.no og andre Schibsted-sider
+! Homepage: https://github.com/BarniKjellerenXD/Schibsted-blocker-Ublock
+! Version: 1.0.0
+! Expires: 7 days
+!
+! === Schibsted CMP cookiepest — fullstendig blokkering ===
+! Fjern selve popup-containeren + iframen
+!
+! --- Hovednyheter og magasiner ---
+vg.no,aftenposten.no,bt.no,aftenbladet.no,e24.no##div[id^="sp_message_container"]
+vg.no,aftenposten.no,bt.no,aftenbladet.no,e24.no##iframe[id^="sp_message_iframe"]
+!
+! --- Teknologi og nisjesider ---
+tek.no,tu.no,digi.no,shifter.no##div[id^="sp_message_container"]
+tek.no,tu.no,digi.no,shifter.no##iframe[id^="sp_message_iframe"]
+!
+! --- Livsstil og forbruker ---
+minmote.no,godt.no,vektklubb.no##div[id^="sp_message_container"]
+minmote.no,godt.no,vektklubb.no##iframe[id^="sp_message_iframe"]
+!
+! --- Markedsplasser ---
+finn.no,prisjakt.no##div[id^="sp_message_container"]
+finn.no,prisjakt.no##iframe[id^="sp_message_iframe"]
+!
+! --- FIX: Opphev scroll-lock som CMP-en setter på body ---
+vg.no,aftenposten.no,bt.no,aftenbladet.no,e24.no,tek.no,tu.no,digi.no,shifter.no,minmote.no,godt.no,vektklubb.no,finn.no,prisjakt.no##body:style(position: static !important; overflow: visible !important; height: auto !important; top: auto !important)
+!
+! --- Blokkér CMP-domenene — da lastes aldri popupen i utgangspunktet ---
+||cmp.vg.no^
+||cmp.aftenposten.no^
+||static.privacy.schibsted.com^
+||cdn.privacy.schibsted.com^
